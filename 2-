@@ -1,0 +1,21 @@
+//  2.	Validación de CUIL: Crea un programa que pida al usuario su número de CUIL.
+//  Utiliza la validación de CUIL proporcionada para verificar que el número tenga
+//  exactamente 11 dígitos.
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+public class main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Pattern numCUIL = Pattern.compile("^[0-9]{11}$");
+        System.out.print("Ingrese su número de CUIL: ");
+        String CUIL = sc.next();
+        Matcher matchNumCUIL = numCUIL.matcher(CUIL);
+        if (matchNumCUIL.matches()){
+            System.out.println("El número CUIL es válido");
+        }
+        else{
+            System.out.println("El número CUIL es inválido");
+        }
+    }
+}
