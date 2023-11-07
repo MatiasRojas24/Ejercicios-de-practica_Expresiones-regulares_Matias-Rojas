@@ -1,0 +1,43 @@
+//  6.	Combinación de Validaciones: Desarrolla un programa que solicite al usuario su
+//  número de teléfono, CUIL y correo electrónico. Aplica las validaciones adecuadas a cada entrada.
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+public class main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Pattern numTelefono = Pattern.compile("^[0-9]{7,10}$");
+        Pattern comprobarEmail = Pattern.compile("^[A-Za-z0-9._$%-]+@[A-Za-z]+\\.[a-z]{2,3}$");
+        Pattern numCUIL = Pattern.compile("^[0-9]{11}$");
+
+        System.out.print("Ingrese su número de teléfono: ");
+        String telefono = sc.next();
+        System.out.print("Ingrese su número de CUIL: ");
+        String CUIL = sc.next();
+        System.out.println("Ingrese su correo electrónico: ");
+        String email = sc.next();
+
+        Matcher matchNumCUIL = numCUIL.matcher(CUIL);
+        Matcher matchNumTelefono = numTelefono.matcher(telefono);
+        Matcher emailMatcher = comprobarEmail.matcher(email);
+
+        if (matchNumTelefono.matches()){
+            System.out.println("El número de teléfono es válido");
+        }
+        else{
+            System.out.println("El número de teléfono es inválido");
+        }
+        if (matchNumCUIL.matches()){
+            System.out.println("El número CUIL es válido");
+        }
+        else{
+            System.out.println("El número CUIL es inválido");
+        }
+        if (emailMatcher.matches()){
+            System.out.println("El correo ingresado es válido");
+        }
+        else{
+            System.out.println("El correo ingresado es inválido");
+        }
+    }
+}
