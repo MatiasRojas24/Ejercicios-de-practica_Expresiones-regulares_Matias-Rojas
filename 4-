@@ -1,0 +1,21 @@
+//  4.	Validación de Nomenclatura: Escribe un programa que requiera al usuario ingresar
+//  una nomenclatura de 22 caracteres. Usa la validación de nomenclatura para comprobar
+//  que la entrada tiene la longitud y el formato correctos.
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+public class main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Pattern comprobarNomenclatura = Pattern.compile("^[a-zA-Z0-9]{22}$");
+        System.out.println("Ingrese una nomenclatura: ");
+        String email = sc.next();
+        Matcher nomenclaturaMatcher = comprobarNomenclatura.matcher(email);
+        if (nomenclaturaMatcher.matches()){
+            System.out.println("La nomenclatrura ingresado es válido");
+        }
+        else{
+            System.out.println("La nomenclatrura ingresado es inválido");
+        }
+    }
+}
