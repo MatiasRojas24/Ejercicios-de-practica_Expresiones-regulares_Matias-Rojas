@@ -1,0 +1,21 @@
+//  1.	Validación de Teléfono: Escribe un programa que solicite al usuario
+//  su número de teléfono. Utiliza la validación de teléfono proporcionada para
+//  garantizar que el número tenga entre 7 y 10 dígitos.
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+public class main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Pattern numTelefono = Pattern.compile("^[0-9]{7,10}$");
+        System.out.print("Ingrese un número de teléfono: ");
+        String telefono = sc.next();
+        Matcher matchNumTelefono = numTelefono.matcher(telefono);
+        if (matchNumTelefono.matches()){
+            System.out.println("El número de teléfono es válido");
+        }
+        else{
+            System.out.println("El número de teléfono es inválido");
+        }
+    }
+}
