@@ -1,0 +1,21 @@
+//  5.	Validación de Letras: Crea un programa que pida al usuario ingresar un nombre.
+//  Utiliza la validación de letras para asegurarte de que solo contenga letras y tenga
+//  entre 7 y 10 caracteres.
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+public class main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Pattern comprobarNombre = Pattern.compile("^[A-Za-z]{7,10}$");
+        System.out.println("Ingrese un nombre: ");
+        String nombre = sc.next();
+        Matcher nombreMatcher = comprobarNombre.matcher(nombre);
+        if (nombreMatcher.matches()){
+            System.out.println("El nombre ingresado es válido");
+        }
+        else{
+            System.out.println("El nombre ingresado es inválido");
+        }
+    }
+}
