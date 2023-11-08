@@ -1,0 +1,20 @@
+// 14.	Validación de Dominio Web: Crea un programa que permita al usuario ingresar nombres de dominio web. 
+// Aplica la validación de correo electrónico personalizada para garantizar que solo se acepten nombres de 
+// dominio válidos.
+import java.util.Scanner;
+        import java.util.regex.Matcher;
+        import java.util.regex.Pattern;
+public class main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Pattern comprobarDominio = Pattern.compile("^[A-Za-z$%&_-]+\\.[a-z]{2,3}$");
+        System.out.println("Ingrese un dominio: ");
+        String dominio = sc.next();
+        Matcher dominioMatcher = comprobarDominio.matcher(dominio);
+        if (dominioMatcher.matches()) {
+            System.out.println("El dominio ingresado es válido");
+        } else {
+            System.out.println("El dominio ingresado es inválido");
+        }
+    }
+}
