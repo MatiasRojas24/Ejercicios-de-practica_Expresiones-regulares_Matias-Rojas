@@ -1,0 +1,20 @@
+// 12.	Validación de Usuario: Desarrolla un programa que requiera un nombre de usuario. Utiliza una variante de la
+// validación de letras que permita letras, números y guiones bajos, pero asegúrate de que
+// cumpla con ciertas restricciones de longitud.
+import java.util.Scanner;
+        import java.util.regex.Matcher;
+        import java.util.regex.Pattern;
+public class main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Pattern comprobarUsuario = Pattern.compile("^[A-Z%$&#._-]{4,20}$");
+        System.out.println("Ingrese su nombre de usuario: ");
+        String nombreUsuario = sc.next();
+        Matcher UsuarioMatcher = comprobarUsuario.matcher(nombreUsuario);
+        if (UsuarioMatcher.matches()) {
+            System.out.println("El nombre de usuario ingresado es válido");
+        } else {
+            System.out.println("El nombre de usuario ingresado es inválido");
+        }
+    }
+}
