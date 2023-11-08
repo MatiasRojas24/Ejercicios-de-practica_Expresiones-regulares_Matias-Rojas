@@ -7,13 +7,13 @@ public class main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Pattern comprobarDNI = Pattern.compile("^[0-9]{8}$");
-        System.out.println("Ingrese su código postal: ");
+        System.out.println("Ingrese su DNI: ");
         String DNI = sc.next();
         Matcher DNIMatcher = comprobarDNI.matcher(DNI);
         if (DNIMatcher.matches()) {
-            System.out.println("El código postal ingresado es válido");
+            System.out.println("El DNI ingresado es válido");
         } else {
-            System.out.println("El código postal ingresado es inválido");
+            System.out.println("El DNI ingresado es inválido");
         }
     }
 }
