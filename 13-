@@ -1,0 +1,20 @@
+// 13.	Validación de Fecha: Escribe un programa que solicite al usuario una fecha en formato "dd/mm/aaaa".
+// Utiliza una versión modificada de la validación de letras para comprobar que la entrada tenga el
+// formato de fecha correcto.
+import java.util.Scanner;
+        import java.util.regex.Matcher;
+        import java.util.regex.Pattern;
+public class main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Pattern comprobarFecha = Pattern.compile("^\\d{2}/\\d{2}/\\d{4}$");
+        System.out.println("Ingrese una fecha: ");
+        String fecha = sc.next();
+        Matcher fechaMatcher = comprobarFecha.matcher(fecha);
+        if (fechaMatcher.matches()) {
+            System.out.println("La fecha ingresado es válido");
+        } else {
+            System.out.println("La fecha ingresado es inválido");
+        }
+    }
+}
