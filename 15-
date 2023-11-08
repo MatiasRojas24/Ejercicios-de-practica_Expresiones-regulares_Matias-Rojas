@@ -1,0 +1,20 @@
+// 15.	Validación de Nombres de Producto: Desarrolla un programa que requiera el nombre de un producto.
+// Utiliza la validación de letras para asegurarte de que solo contenga letras y tenga una longitud
+// mínima de 5 caracteres.
+import java.util.Scanner;
+        import java.util.regex.Matcher;
+        import java.util.regex.Pattern;
+public class main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Pattern comprobarProducto = Pattern.compile("^[A-Z][a-z]{5,50}$");
+        System.out.println("Ingrese el nombre de un producto: ");
+        String producto = sc.next();
+        Matcher productoMatcher = comprobarProducto.matcher(producto);
+        if (productoMatcher.matches()) {
+            System.out.println("El nombre de un producto ingresado es válido");
+        } else {
+            System.out.println("El dnombre de un producto ingresado es inválido");
+        }
+    }
+}
