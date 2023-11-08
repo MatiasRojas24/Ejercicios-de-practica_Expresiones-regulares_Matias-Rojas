@@ -1,0 +1,19 @@
+// 11.	Validación de DNI: Crea un programa que solicite al usuario su número de Documento Nacional de Identidad (DNI).
+// Utiliza una versión adaptada de la validación de CUIL para asegurarte de que tenga exactamente 8 dígitos.
+import java.util.Scanner;
+        import java.util.regex.Matcher;
+        import java.util.regex.Pattern;
+public class main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Pattern comprobarDNI = Pattern.compile("^[0-9]{8}$");
+        System.out.println("Ingrese su código postal: ");
+        String DNI = sc.next();
+        Matcher DNIMatcher = comprobarDNI.matcher(DNI);
+        if (DNIMatcher.matches()) {
+            System.out.println("El código postal ingresado es válido");
+        } else {
+            System.out.println("El código postal ingresado es inválido");
+        }
+    }
+}
