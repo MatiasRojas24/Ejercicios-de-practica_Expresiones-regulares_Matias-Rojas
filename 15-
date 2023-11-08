@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Pattern comprobarProducto = Pattern.compile("^[A-Z][a-z]{5,50}$");
+        Pattern comprobarProducto = Pattern.compile("^[A-Z][a-z]{5,}$");
         System.out.println("Ingrese el nombre de un producto: ");
         String producto = sc.next();
         Matcher productoMatcher = comprobarProducto.matcher(producto);
