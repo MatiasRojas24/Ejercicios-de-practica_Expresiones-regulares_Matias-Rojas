@@ -12,9 +12,9 @@ public class main {
         String fecha = sc.next();
         Matcher fechaMatcher = comprobarFecha.matcher(fecha);
         if (fechaMatcher.matches()) {
-            System.out.println("La fecha ingresado es válido");
+            System.out.println("La fecha ingresada es válida");
         } else {
-            System.out.println("La fecha ingresado es inválido");
+            System.out.println("La fecha ingresada es inválida");
         }
     }
 }
