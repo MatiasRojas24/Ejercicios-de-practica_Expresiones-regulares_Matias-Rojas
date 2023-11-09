@@ -12,9 +12,9 @@ public class main {
         String producto = sc.next();
         Matcher productoMatcher = comprobarProducto.matcher(producto);
         if (productoMatcher.matches()) {
-            System.out.println("El nombre de un producto ingresado es válido");
+            System.out.println("El nombre del producto ingresado es válido");
         } else {
-            System.out.println("El dnombre de un producto ingresado es inválido");
+            System.out.println("El dnombre del producto ingresado es inválido");
         }
     }
 }
